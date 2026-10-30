@@ -1,0 +1,62 @@
+﻿<Window x:Class="pr4_trpo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pr4_trpo"
+        mc:Ignorable="d"
+        Title="Автомобили" Height="450" Width="800">
+    <Grid Background ="WhiteSmoke">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="ID тачки: " VerticalAlignment="Center" Margin="0,0,0,15" FontSize="15"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Id}" FontSize="12" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Марка тачки: " VerticalAlignment="Center" FontSize="15" Margin="0,0,0,15"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged}" FontSize="12" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Модель тачки: " VerticalAlignment="Center" FontSize="15" Margin="0,0,0,15"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}" FontSize="12" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Год выпуска тачки: " VerticalAlignment="Center" FontSize="15" Margin="0,0,0,15"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Year, UpdateSourceTrigger=PropertyChanged}" FontSize="12" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Пробег тачки: " VerticalAlignment="Center" FontSize="15" Margin="0,0,0,15"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Km, UpdateSourceTrigger=PropertyChanged}" FontSize="12" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Возраст тачки: " VerticalAlignment="Center" FontSize="15" Margin="0,0,0,15"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Age}" FontSize="12" FontWeight="Bold"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="6">
+            <Button Content="Сохранить"  FontSize="15" FontWeight="Bold" Click="Save_Click"/>
+            <Button Content="Новая запись" Margin="5,0,0,0" FontSize="15" FontWeight="Bold" Click="New_Click"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="Поиск по Id" VerticalAlignment="Center" FontSize="15"/>
+        <TextBox Grid.Row="7" Grid.Column="1" Name="Search" FontSize="12" FontWeight="Bold" Margin="15"/>
+        <Button Grid.Row="8" Grid.Column="1" Content="Найти" Width="150" Click="Find_Click" FontWeight="Bold"/>
+        <Button Grid.Row="9" Grid.Column="1" Content="Сбросить" Width="150" Margin="5" Click="Delete_Click" FontWeight="Bold"/>
+
+    </Grid>
+
+    
+</Window>
